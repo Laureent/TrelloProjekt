@@ -1,5 +1,5 @@
 let token = document.getElementById('token').value;
-let apikey = "6e9161711b4b1a09d3617140440da447";
+let apikey =document.getElementById('apikey').value;
 let tables = Array();
 
 async function getTables(){   
