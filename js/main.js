@@ -16,6 +16,18 @@ async function getTables(){
 
 function showTables(){
     console.log(tables);
+    tables.forEach(element => {
+        let button = document.createElement('button');
+        button.innerText = element.name;
+        button.className = "col";
+        button.onclick = function() { displayTable(element.name); }
+        document.getElementById('main').append(button);
+    })
+}
+
+function displayTable(table){
+    document.getElementById('main').style.display = "none";
+    console.log(table);
 }
 
 

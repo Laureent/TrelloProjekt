@@ -9,18 +9,23 @@
   <title>Pe🍆🍆o</title>
 </head>
 <body>
-  <div id="TitleBorder">
-      <h1 id="welcome">Welcome to</h1>
-      <h1 id="title">PE🍆🍆O!</h1>
-  </div>
-  <div class="text-center my-5" id="maketable">
-    <div id="TextBorder">
-      <input type="text" id="token" placeholder="Enter token"/>
-      <input type="text" id="api key" placeholder="Enter api key"/>
-      <a href="https://trello.com/app-key/" target=”_blank”><h3>Get your api key</h3></a>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="TitleBorder">
+          <h1 id="welcome">Welcome to</h1>
+          <h1 id="title">PE🍆🍆O!</h1>
+      </div>
+      <div class="text-center my-2" id="maketable">
+        <div id="TextBorder">
+          <input type="text" id="token" placeholder="Enter token"/>
+          <input type="text" id="apikey" placeholder="Enter apikey"/>
+          <a href="https://trello.com/app-key/" target=”_blank”><h3>Get your apikey</h3></a>
+        </div>   
+        <button onclick="getTables()"> Show tables!</button>
+      </div>
     </div>
-    
-    <button onclick="getTables()"> Show tables!</button>
+    <div class="row my-2" id="main">
+    </div>
   </div>
 </body>
 <script src="js/main.js"></script>
