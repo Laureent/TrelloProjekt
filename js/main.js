@@ -18,7 +18,7 @@ function showTables(){
     tables.forEach(element => {
         let button = document.createElement('button');
         button.innerText = element.name;
-        button.className = "col";
+        button.className = "col tableButton";
         button.onclick = function() { displayTable(element.name); }
         document.getElementById('main').append(button);
     })

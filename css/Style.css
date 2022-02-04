@@ -110,3 +110,7 @@ input[type=text] {
   border: 2px solid white;
   border-radius: 4px;
 }
+.tableButton{
+  margin: 20px;
+  margin-top: 50px;
+}
