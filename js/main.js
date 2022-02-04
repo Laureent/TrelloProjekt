@@ -15,7 +15,6 @@ async function getTables(){
 }
 
 function showTables(){
-    console.log(tables);
     tables.forEach(element => {
         let button = document.createElement('button');
         button.innerText = element.name;
@@ -27,7 +26,6 @@ function showTables(){
 
 function displayTable(table){
     document.getElementById('main').style.display = "none";
-    console.log(table);
 }
 
 
