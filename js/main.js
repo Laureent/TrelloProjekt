@@ -34,24 +34,27 @@ function showTables(){
  * táblák megjelenítése (listák, kártyák)
  * @param {number} tableid - a táblák id-ja
  */
-function displayTable(tableid){
-    document.getElementById('main').style.display = "none";
-    getCards(tableid);
-    getLists(tableid);
-    let template = document.getElementsByTagName('template')[0];
+async function displayTable(tableid){
+    document.getElementById('main').innerHTML = "";
+    await getCards(tableid);
+    await getLists(tableid);
+    let template = document.getElementsByTagName('template')[0].content;
     lists.forEach(element=>{
         let list = document.importNode(template,true);
-        list.querySelector('h5').innerHTML = element.name;
+        list.querySelector('h5').innerText = element.name;
         cards.forEach(card => {
             if(card.idList == element.id){
                 let p = document.createElement('p');
                 p.innerHTML = card.name;
-                list.getElementsByClassName('card-body').append(p);
+                p.className = "card-text";
+                console.log(list);
+                list.querySelector('.card-body').append(p);
             }
         })
-        document.getElementById('main').append(list);
+        document.getElementById('main').append(list);       
     })
 }
+
 
 /**
  * Lista bekérése a tábla id-ja alapján
