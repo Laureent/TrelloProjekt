@@ -17,6 +17,9 @@ async function getTables(){
     console.log(tables)
 }
 
+/**
+ * opciók megjelenítése
+ */
 function showTables(){
     tables.forEach(element => {
         let button = document.createElement('button');
@@ -27,6 +30,10 @@ function showTables(){
     })
 }
 
+/**
+ * táblák megjelenítése (listák, kártyák)
+ * @param {number} tableid - a táblák id-ja
+ */
 function displayTable(tableid){
     document.getElementById('main').style.display = "none";
     getCards(tableid);
@@ -46,6 +53,10 @@ function displayTable(tableid){
     })
 }
 
+/**
+ * Lista bekérése a tábla id-ja alapján
+ * @param {number} tableid - a táblák id-ja
+ */
 async function getLists(tableid){
     let response = await fetch("https://api.trello.com/1/boards/"+tableid+"/lists?key="+apikey.trim()+"&token="+token.trim());
     let data = await response.json();
@@ -53,6 +64,10 @@ async function getLists(tableid){
     console.log(lists);
 }
 
+/**
+ * kártyák bekérése a tábla id-ja alapján
+ * @param {number} tableid - a táblák id-ja
+ */
 async function getCards(tableid){
     let response = await fetch("https://api.trello.com/1/boards/"+tableid+"/cards?key="+apikey.trim()+"&token="+token.trim());
     let data = await response.json();
