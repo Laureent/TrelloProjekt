@@ -24,7 +24,7 @@ function showTables(){
     tables.forEach(element => {
         let button = document.createElement('button');
         button.innerText = element.name;
-        button.className = "col tableButton";
+        button.className = "col tableButton show-table";
         button.onclick = function() { displayTable(element.id); }
         document.getElementById('main').append(button);
     })
@@ -45,15 +45,17 @@ async function displayTable(tableid){
         cards.forEach(card => {
             if(card.idList == element.id){
                 let p = document.createElement('p');
-                p.innerHTML = card.name;
-                p.className = "card-text";
+                let button = document.createElement('button');               
+                button.innerHTML = card.name;
+                button.className = "card-text";
                 console.log(list);
-                list.querySelector('.card-body').append(p);
+                list.querySelector('.card-body').append(button);
             }
         })
         document.getElementById('main').append(list);       
     })
 }
+
 
 
 /**
