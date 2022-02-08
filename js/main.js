@@ -44,12 +44,13 @@ async function displayTable(tableid){
         list.querySelector('h5').innerText = element.name;
         cards.forEach(card => {
             if(card.idList == element.id){
-                let p = document.createElement('p');
-                let button = document.createElement('button');               
+                let button = document.createElement('button');      
+                let br = document.createElement('br');      
                 button.innerHTML = card.name;
                 button.className = "card-text";
                 console.log(list);
                 list.querySelector('.card-body').append(button);
+                list.querySelector('.card-body').append(br);
             }
         })
         document.getElementById('main').append(list);       
